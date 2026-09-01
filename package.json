@@ -1,0 +1,22 @@
+{
+  "name": "vpngate-mihomo-worker",
+  "version": "1.0.0",
+  "description": "VPNGate to Mihomo (Clash Meta) OpenVPN Subscription Converter running on Cloudflare Workers",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "vpngate",
+    "mihomo",
+    "clash-meta",
+    "openvpn",
+    "cloudflare-workers"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
