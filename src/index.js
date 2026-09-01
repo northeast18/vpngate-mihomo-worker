@@ -13,12 +13,15 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // 1. 路由与 Token 鉴权
+    // 1. 路由与 Token 鉴权 (支持 ?token=xxx 或 直接 /TOKEN 路径)
     const AUTH_TOKEN = env.AUTH_TOKEN || "JJmi1vwutFHfssyH8Ym88NQNp2pZQ6Lo";
-    const requestToken = url.searchParams.get("token") || "";
+    
+    // 优先从 ?token= 参数获取，如果没有则尝试从 URL 路径 /xxx 获取
+    const pathToken = url.pathname.replace(/^\/+/, "").split("/")[0];
+    const requestToken = url.searchParams.get("token") || (pathToken && pathToken !== "openvpn.yaml" ? pathToken : "");
 
     if (AUTH_TOKEN && requestToken !== AUTH_TOKEN) {
-      return new Response("Unauthorized: 密钥错误或未提供", {
+      return new Response("Unauthorized: 密钥错误或未提供。请在链接后添加 ?token=你的密钥 或 /你的密钥", {
         status: 401,
         headers: { "Content-Type": "text/plain; charset=utf-8" },
       });
