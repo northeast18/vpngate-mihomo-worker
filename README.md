@@ -26,10 +26,10 @@
 
 ## 📖 订阅参数详解
 
-你的专属订阅地址为：
+你的专属自建订阅地址为：
 
 ```text
-https://你的Worker域名/?token=你的AUTH_TOKEN&country=JP&proto=tcp&sort=smart&max_users=5&min_speed=20&dialer_proxy=⚡ CF前置
+https://gate.jishu.ccwu.cc/?token=JJmi1vwutFHfssyH8Ym88NQNp2pZQ6Lo&country=JP&proto=tcp&sort=smart&max_users=5&min_speed=20&dialer_proxy=⚡ CF前置
 ```
 
 | 参数名 | 默认值 | 可选值 / 说明 | 最佳推荐示例 |
@@ -57,7 +57,7 @@ https://你的Worker域名/?token=你的AUTH_TOKEN&country=JP&proto=tcp&sort=sma
 proxy-providers:
   VPNGATE-PRIVATE-JP:
     type: http
-    url: "https://你的Worker域名/?token=你的AUTH_TOKEN&country=JP&proto=tcp&sort=smart&max_users=5&min_speed=20"
+    url: "https://gate.jishu.ccwu.cc/?token=JJmi1vwutFHfssyH8Ym88NQNp2pZQ6Lo&country=JP&proto=tcp&sort=smart&max_users=5&min_speed=20"
     path: "./providers/vpngate-private-jp.yaml"
     proxy: "⚡ CF前置"
     interval: 1800
